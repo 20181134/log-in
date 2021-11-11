@@ -6,7 +6,7 @@
     <body>
     <?php
         $pdo = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'admin', 'password');
-        $stmt = $pdo->prepare('SELECT FROM login_database where username="'.$_REQUEST['name'].'"');
+        $stmt = $pdo->prepare('SELECT * FROM login_database where username="'.$_REQUEST['name'].'"');
         if ($stmt->execute()) {
             if ($_REQUEST['password'] == $row['password']) {
                 $status = 1;
@@ -14,6 +14,7 @@
             } else {
                 $status = 0;
                 echo 'ユーザー名またはパスワードが違います';
+                echo 'パスワードは', $row['password'], 'です';
             }
         } else {
             $status = 0;
