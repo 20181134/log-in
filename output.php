@@ -17,7 +17,7 @@
             }
         }
         if (isset($_SESSION['user'])) {
-            echo 'ようこそ、', $_SESSION['username'], 'さん';
+            echo 'ようこそ、', $_SESSION['user']['username'], 'さん';
         } else {
             echo 'ユーザー名またはパスワードが違います';
         }
