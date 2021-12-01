@@ -6,7 +6,7 @@
     <body>
         <h1>Log-in System</h1>
         <form action="output.php" method="post">
-            Username: <input type="text" name="name">
+            Username: <input type="text" name="name"><br>
             Password: <input type="password" name="password">
             <input type="submit" value="Log In">
         </form>
